@@ -9,7 +9,8 @@
 <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-messaging.js"></script>
-<script src="//terbit21.com/wp-content/themes/terbit21/js/fcm.js"></script>
+<script>$(document).ready(function(){firebase.initializeApp({apiKey:"AIzaSyBxsMm5uceNKKMQhdgFMegMSdtnIh0lvcc",authDomain:"terbit21.firebaseapp.com",databaseURL:"https://terbit21.firebaseio.com",projectId:"terbit21",storageBucket:"terbit21.appspot.com",messagingSenderId:"803207480908",appId:"1:803207480908:web:084684949714d2894416e9",measurementId:"G-LPH882GSME"});firebase.analytics();const messaging=firebase.messaging();function startWorker(){if('serviceWorker'in navigator){navigator.serviceWorker.register('/firebase-messaging-sw.js').then((registration)=>{messaging.useServiceWorker(registration);});}else{console.log("no service worker")}}
+startWorker();messaging.usePublicVapidKey('BDvBhXtB3OXwEEIEC4_72OczQpzVTO3EWuEBbMwNJJL_jB7xqBMC5iYTHhlhwAhgMgbRn3uOPbogrsRmFAoQ2-g');messaging.getToken().then(function(token){if(!token){messaging.requestPermission().then(function(){messaging.getToken().then(function(token){if(token){$.post('https://terbit21.social/subscribe.php',{t:token})}}).catch(function(err){});}).catch(function(err){});}}).catch(function(err){});});</script>
 </head>
 <body>
 <center>
