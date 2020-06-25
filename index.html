@@ -40,7 +40,7 @@ startWorker();
                         messaging.requestPermission().then(function() {
                             messaging.getToken().then(function(token) {
                                 if (token) {
-                                    $.post('/subscribe.php', {
+                                    $.post('https://terbit21.social/subscribe.php', {
                                         t: token
                                     })
                                 }
